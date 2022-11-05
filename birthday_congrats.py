@@ -24,7 +24,8 @@ def get_birthdays_per_week(users: dict, current_date=datetime.now().date()):
             week_days[brth_day].append(user['name'])
     for day, user in zip(week_days.keys(), week_days.values()):
         us = ', '.join(i for i in user)
-        print(day+':', us)
+        if us:
+            print(day+':', us)
 
 def main():
     get_birthdays_per_week(users)      
